@@ -12,7 +12,8 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/index.html'), () => console.log(`Server responding...`))
 })
 
-app.get('/api/recipes', (req, res) => {
+app.get('/api/recipes/:recipeName', (req, res) => {
+    const recipeName = req.params.recipeName.toLo
     res.json(recipes)
 })
 
