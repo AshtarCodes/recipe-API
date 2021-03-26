@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/api/recipes/:recipeName', (req, res) => {
-    const recipeName = req.params.recipeName.toLo
+    const recipeName = req.params.recipeName.toLowerCase()
     res.json(recipes)
 })
 
