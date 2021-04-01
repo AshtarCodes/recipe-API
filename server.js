@@ -12,9 +12,19 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/index.html'), () => console.log(`Server responding...`))
 })
 
+//get all recipes json api
+app.get('/api/recipes', (req, res) => {
+    res.json(recipes)
+})
+
+//get recipe by name json api
 app.get('/api/recipes/:recipeName', (req, res) => {
     const recipeName = req.params.recipeName.toLowerCase()
-    res.json(recipes)
+    if (recipes[recipeName]){
+        res.json(recipes[recipeName])
+    } else {
+        res.status(404).end('We don\'t have this recipe yet! Sorry!')
+    }
 })
 
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}`))
