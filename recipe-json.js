@@ -1,7 +1,7 @@
 
 const recipes = {
     'ginger beer': {
-        name: '5 Ingedient Ginger Beer Margaritas',
+        name: '5 Ingredient Ginger Beer Margaritas',
         description: '5-Ingredient margaritas made with ginger beer and fresh lime juice! Simple, flavorful, and so delicious. The only margarita recipe you’ll ever need.',
         author: 'Minimalist Baker',
         ingredients: [ 

@@ -7,6 +7,9 @@ const recipes = require('./recipe-json')
 const PORT = process.env.PORT || 8000
 
 app.use(cors())
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
+app.use(express.static('public'))
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/index.html'), () => console.log(`Server responding...`))
@@ -23,7 +26,7 @@ app.get('/api/recipes/:recipeName', (req, res) => {
     if (recipes[recipeName]){
         res.json(recipes[recipeName])
     } else {
-        res.status(404).end('We don\'t have this recipe yet! Sorry!')
+        res.status(404).end()
     }
 })
 
