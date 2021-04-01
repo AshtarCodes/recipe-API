@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Current Recipes</h1>
+    <ul class="recipes">
+    <% for(let i=0; i < info.length; i++) {%>
+        <li class="recipe-name">
+            <span><%= info[i].recipeName %></span>
+            <span><%= info[i].recipeAuthor %></span>
+            <span><%= info[i].link %></span>
+            <span><%= info[i].likes %></span>
+            <span class='fa fa-thumbs-up'></span>
+            <span class='fa fa-trash'></span>
+        </li>
+    <% } %>
+    </ul>
+
+    <h2>Add Your Favorite Recipe:</h2>
+
+    <form action="/addRecipe" method="POST">
+        <input type="text" placeholder="Recipe Name" name="recipeName">
+        <input type="text" placeholder="Recipe Author" name="recipeAuthor">
+        <input type="text" placeholder="Recipe Link" name="link">
+        <input type="submit">
+    </form>
+    
+
+    <script type='text/javascript' src='/main.js'></script>
+</body>
+</html>

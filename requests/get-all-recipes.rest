@@ -1,0 +1,9 @@
+GET http://localhost:8000/
+
+###
+GET http://localhost:8000/api/recipes
+Content-Type: application/json
+
+###
+GET http://localhost:8000/api/recipes/ginger%20beer
+Content-Type: application/json
